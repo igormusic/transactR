@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/src/transactR.Config/.vs
+/src/transactR.Config/bin/Debug/netcoreapp1.0
+/src/transactR.Config/obj/Debug/netcoreapp1.0
+/test/transactR.Tests/bin/Debug/netcoreapp1.0
+/test/transactR.Tests/obj/Debug/netcoreapp1.0

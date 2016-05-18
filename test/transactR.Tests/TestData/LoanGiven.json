@@ -1,0 +1,300 @@
+﻿{
+  "Name": "LoanGiven",
+  "PositionTypes": [
+    { "Name": "ConversionInterest" },
+    { "Name": "EarlyRedemptionFee" },
+    { "Name": "InterestAccrued" },
+    { "Name": "InterestCapitalized" },
+    { "Name": "Principal" }
+  ],
+  "TransactionTypes": [
+    {
+      "Name": "AdditionalAdvance",
+      "HasMaximumPrecission": false,
+      "TransactionRules": [
+        {
+          "PositionType": { "Name": "Principal" },
+          "TransactionOperation": 1
+        }
+      ]
+    },
+    {
+      "Name": "Advance",
+      "HasMaximumPrecission": false,
+      "TransactionRules": [
+        {
+          "PositionType": { "Name": "Principal" },
+          "TransactionOperation": 1
+        }
+      ]
+    },
+    {
+      "Name": "ConversionInterest",
+      "HasMaximumPrecission": false,
+      "TransactionRules": [
+        {
+          "PositionType": { "Name": "ConversionInterest" },
+          "TransactionOperation": 1
+        }
+      ]
+    },
+    {
+      "Name": "EarlyRedemptionFee",
+      "HasMaximumPrecission": false,
+      "TransactionRules": [
+        {
+          "PositionType": { "Name": "EarlyRedemptionFee" },
+          "TransactionOperation": 1
+        }
+      ]
+    },
+    {
+      "Name": "FXResultInterest",
+      "HasMaximumPrecission": false,
+      "TransactionRules": [
+        {
+          "PositionType": { "Name": "InterestAccrued" },
+          "TransactionOperation": 1
+        }
+      ]
+    },
+    {
+      "Name": "FXResultPrincipal",
+      "HasMaximumPrecission": false,
+      "TransactionRules": [
+        {
+          "PositionType": { "Name": "Principal" },
+          "TransactionOperation": 1
+        }
+      ]
+    },
+    {
+      "Name": "InterestAccrued",
+      "HasMaximumPrecission": true,
+      "TransactionRules": [
+        {
+          "PositionType": { "Name": "InterestAccrued" },
+          "TransactionOperation": 1
+        }
+      ]
+    },
+    {
+      "Name": "InterestCapitalized",
+      "HasMaximumPrecission": false,
+      "TransactionRules": [
+        {
+          "PositionType": { "Name": "Principal" },
+          "TransactionOperation": 1
+        },
+        {
+          "PositionType": { "Name": "InterestAccrued" },
+          "TransactionOperation": -1
+        },
+        {
+          "PositionType": { "Name": "InterestCapitalized" },
+          "TransactionOperation": 1
+        }
+      ]
+    },
+    {
+      "Name": "InterestPayment",
+      "HasMaximumPrecission": false,
+      "TransactionRules": [
+        {
+          "PositionType": { "Name": "InterestAccrued" },
+          "TransactionOperation": -1
+        }
+      ]
+    },
+    {
+      "Name": "Redemption",
+      "HasMaximumPrecission": false,
+      "TransactionRules": [
+        {
+          "PositionType": { "Name": "Principal" },
+          "TransactionOperation": -1
+        }
+      ]
+    }
+  ],
+  "ScheduleTypes": [
+    {
+      "Name": "AccrualSchedule",
+      "Frequency": 0,
+      "EndType": 0,
+      "BusinessDayCalculation": 0,
+      "StartDateExpression": "StartDate",
+      "EndDateExpression": null,
+      "NumberOfRepeatsExpression": null,
+      "IntervalExpression": "1",
+      "IsCalculated": true
+    },
+    {
+      "Name": "InterestSchedule",
+      "Frequency": 1,
+      "EndType": 1,
+      "BusinessDayCalculation": 0,
+      "StartDateExpression": null,
+      "EndDateExpression": null,
+      "NumberOfRepeatsExpression": null,
+      "IntervalExpression": "1",
+      "IsCalculated": false
+    },
+    {
+      "Name": "RedemptionSchedule",
+      "Frequency": 1,
+      "EndType": 1,
+      "BusinessDayCalculation": 0,
+      "StartDateExpression": null,
+      "EndDateExpression": null,
+      "NumberOfRepeatsExpression": null,
+      "IntervalExpression": "1",
+      "IsCalculated": false
+    }
+  ],
+  "AmountTypes": [
+    {
+      "Name": "RedemptionAmount",
+      "IsValueDated": false
+    },
+    {
+      "Name": "AdditionalAdvanceAmount",
+      "IsValueDated": false
+    },
+    {
+      "Name": "ConversionInterestAmount",
+      "IsValueDated": false
+    },
+    {
+      "Name": "AdvanceAmount",
+      "IsValueDated": false
+    }
+  ],
+  "DateTypes": [
+    { "Name": "AccrualStart" },
+    { "Name": "StartDate" },
+    { "Name": "EndDate" }
+  ],
+  "OptionTypes": [
+    {
+      "Name": "AccrualOption",
+      "OptionListExpression": "TransactRules.Calculations.AccrualCalculation.AccrualOptions()"
+    }
+  ],
+  "RateTypes": [ { "Name": "InterestRate" } ],
+  "ScheduledTransactions": [
+    {
+      "Name": null,
+      "Timing": 0,
+      "ScheduleType": null,
+      "DateType": { "Name": "StartDate" },
+      "TransactionType": {
+        "Name": "Advance",
+        "HasMaximumPrecission": false,
+        "TransactionRules": [
+          {
+            "PositionType": { "Name": "Principal" },
+            "TransactionOperation": 1
+          }
+        ]
+      },
+      "AmountExpression": "AdvanceAmount",
+      "Sequence": 1
+    },
+    {
+      "Name": null,
+      "Timing": 1,
+      "ScheduleType": {
+        "Name": "AccrualSchedule",
+        "Frequency": 0,
+        "EndType": 0,
+        "BusinessDayCalculation": 0,
+        "StartDateExpression": "StartDate",
+        "EndDateExpression": null,
+        "NumberOfRepeatsExpression": null,
+        "IntervalExpression": "1",
+        "IsCalculated": true
+      },
+      "DateType": null,
+      "TransactionType": {
+        "Name": "InterestAccrued",
+        "HasMaximumPrecission": true,
+        "TransactionRules": [
+          {
+            "PositionType": { "Name": "InterestAccrued" },
+            "TransactionOperation": 1
+          }
+        ]
+      },
+      "AmountExpression": "TransactRules.Calculations.AccrualCalculation.InterestAccrued(accrualOption: AccrualOption, principal: Principal, rate: InterestRate, valueDate:  TransactRules.Core.Utilities.SessionState.Current.ValueDate)",
+      "Sequence": 1
+    },
+    {
+      "Name": null,
+      "Timing": 1,
+      "ScheduleType": {
+        "Name": "InterestSchedule",
+        "Frequency": 1,
+        "EndType": 1,
+        "BusinessDayCalculation": 0,
+        "StartDateExpression": null,
+        "EndDateExpression": null,
+        "NumberOfRepeatsExpression": null,
+        "IntervalExpression": "1",
+        "IsCalculated": false
+      },
+      "DateType": null,
+      "TransactionType": {
+        "Name": "InterestCapitalized",
+        "HasMaximumPrecission": false,
+        "TransactionRules": [
+          {
+            "PositionType": { "Name": "Principal" },
+            "TransactionOperation": 1
+          },
+          {
+            "PositionType": { "Name": "InterestAccrued" },
+            "TransactionOperation": -1
+          },
+          {
+            "PositionType": { "Name": "InterestCapitalized" },
+            "TransactionOperation": 1
+          }
+        ]
+      },
+      "AmountExpression": "InterestAccrued",
+      "Sequence": 2
+    }
+  ],
+  "InstalmentTypes": [
+    {
+      "Name": "Redemptions",
+      "Timing": 0,
+      "ScheduleType": {
+        "Name": "RedemptionSchedule",
+        "Frequency": 1,
+        "EndType": 1,
+        "BusinessDayCalculation": 0,
+        "StartDateExpression": null,
+        "EndDateExpression": null,
+        "NumberOfRepeatsExpression": null,
+        "IntervalExpression": "1",
+        "IsCalculated": false
+      },
+      "TransactionType": {
+        "Name": "Redemption",
+        "HasMaximumPrecission": false,
+        "TransactionRules": [
+          {
+            "PositionType": { "Name": "Principal" },
+            "TransactionOperation": -1
+          }
+        ]
+      },
+      "PrincipalPositionType": { "Name": "Principal" },
+      "InterestAccrued": { "Name": "InterestAccrued" },
+      "InterestACapitalized": { "Name": "InterestCapitalized" }
+    }
+  ],
+  "PartyRoleTypes": [ ]
+}
