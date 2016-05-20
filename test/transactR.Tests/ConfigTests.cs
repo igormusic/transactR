@@ -12,7 +12,7 @@ namespace transactR.Tests
         {
             var config = Utility.CreateLoanGivenAccountType();
 
-            var json = JsonConvert.SerializeObject(config);
+            var json = JsonConvert.SerializeObject(config, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             Console.Error.Write(json);
         }

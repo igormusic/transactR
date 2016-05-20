@@ -1,16 +1,20 @@
-﻿namespace TransactRules.Configuration
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+namespace TransactRules.Configuration
 {
     public class InstalmentType
     {
         
         public virtual string Name { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
         public virtual ScheduledTransactionTiming Timing { get; set; }
-        public virtual ScheduleType ScheduleType { get; set; }
-        public virtual TransactionType TransactionType { get; set; }
-        public virtual PositionType PrincipalPositionType { get; set; }
+        public virtual string ScheduleTypeName { get; set; }
+        public virtual string TransactionTypeName { get; set; }
+        public virtual string PrincipalPositionTypeName { get; set; }
         //required for amortization calculations
-        public virtual PositionType InterestAccrued { get; set; }
-        public virtual PositionType InterestACapitalized { get; set; }
+        public virtual string InterestAccruedPositionName { get; set; }
+        public virtual string InterestCapitalizedPositionName { get; set; }
 
     }
 }

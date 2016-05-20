@@ -3,7 +3,7 @@
     public class PartyRoleType
     {
         
-        public virtual PartyType PartyType { get; set; }
+        public virtual string PartyTypeName { get; set; }
         public virtual string Name { get; set; }
     }
 }

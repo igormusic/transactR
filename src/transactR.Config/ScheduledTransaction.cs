@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 
 namespace TransactRules.Configuration
 {
@@ -11,10 +13,11 @@ namespace TransactRules.Configuration
     {
         
         public virtual string Name { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
         public virtual ScheduledTransactionTiming Timing { get; set; }
-        public virtual ScheduleType ScheduleType { get; set; }
-        public virtual DateType DateType { get; set; }
-        public virtual TransactionType TransactionType { get; set; }
+        public virtual string ScheduleTypeName { get; set; }
+        public virtual string DateTypeName { get; set; }
+        public virtual string TransactionTypeName { get; set; }
         [StringLength(64000)]
         public virtual string AmountExpression { get; set; }
         public virtual int Sequence { get; set; }

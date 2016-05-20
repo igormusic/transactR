@@ -50,7 +50,7 @@ namespace transactR.Tests
                 Name = "InterestAccrued",
                 HasMaximumPrecission = true,
                 TransactionRules = new List<TransactionRuleType> {
-                    new TransactionRuleType { PositionType = interestAccruedPosition, TransactionOperation = TransactionOperation.Add }
+                    new TransactionRuleType { PositionTypeName = interestAccruedPosition.Name, TransactionOperation = TransactionOperation.Add }
                 }
             };
 
@@ -58,9 +58,9 @@ namespace transactR.Tests
             {
                 Name = "InterestCapitalized",
                 TransactionRules = new List<TransactionRuleType> {
-                                new TransactionRuleType { PositionType = principalPosition, TransactionOperation = TransactionOperation.Add },
-                                new TransactionRuleType { PositionType = interestAccruedPosition, TransactionOperation = TransactionOperation.Subtract },
-                                new TransactionRuleType { PositionType = interestCapitalizedPosition, TransactionOperation = TransactionOperation.Add }
+                                new TransactionRuleType { PositionTypeName = principalPosition.Name, TransactionOperation = TransactionOperation.Add },
+                                new TransactionRuleType { PositionTypeName = interestAccruedPosition.Name, TransactionOperation = TransactionOperation.Subtract },
+                                new TransactionRuleType { PositionTypeName = interestCapitalizedPosition.Name, TransactionOperation = TransactionOperation.Add }
                             }
             };
 
@@ -68,7 +68,7 @@ namespace transactR.Tests
             {
                 Name = "Redemption",
                 TransactionRules = new List<TransactionRuleType> {
-                            new TransactionRuleType { PositionType = principalPosition, TransactionOperation = TransactionOperation.Subtract }
+                            new TransactionRuleType { PositionTypeName = principalPosition.Name, TransactionOperation = TransactionOperation.Subtract }
                             }
             };
 
@@ -76,7 +76,7 @@ namespace transactR.Tests
             {
                 Name = "Advance",
                 TransactionRules = new List<TransactionRuleType> {
-                                new TransactionRuleType { PositionType = principalPosition, TransactionOperation = TransactionOperation.Add }
+                                new TransactionRuleType { PositionTypeName = principalPosition.Name, TransactionOperation = TransactionOperation.Add }
                             }
             };
 
@@ -99,35 +99,35 @@ namespace transactR.Tests
                         new TransactionType { 
                             Name = "AdditionalAdvance", 
                             TransactionRules = new List<TransactionRuleType> {
-                                new TransactionRuleType { PositionType = principalPosition, TransactionOperation = TransactionOperation.Add }
+                                new TransactionRuleType { PositionTypeName = principalPosition.Name, TransactionOperation = TransactionOperation.Add }
                             }
                         },
                         advanceTransactionType,
                         new TransactionType { 
                             Name = "ConversionInterest", 
                             TransactionRules = new List<TransactionRuleType> {
-                                new TransactionRuleType { PositionType = conversionInterestPosition, TransactionOperation = TransactionOperation.Add }
+                                new TransactionRuleType { PositionTypeName = conversionInterestPosition.Name, TransactionOperation = TransactionOperation.Add }
                             }
                         },
 
                         new TransactionType { 
                             Name = "EarlyRedemptionFee", 
                             TransactionRules = new List<TransactionRuleType> {
-                                new TransactionRuleType { PositionType = earlyRedemptionFeePosition, TransactionOperation = TransactionOperation.Add }
+                                new TransactionRuleType { PositionTypeName = earlyRedemptionFeePosition.Name, TransactionOperation = TransactionOperation.Add }
                             }
                         },
 
                          new TransactionType { 
                             Name = "FXResultInterest", 
                             TransactionRules = new List<TransactionRuleType> {
-                                new TransactionRuleType { PositionType = interestAccruedPosition, TransactionOperation = TransactionOperation.Add }
+                                new TransactionRuleType { PositionTypeName = interestAccruedPosition.Name, TransactionOperation = TransactionOperation.Add }
                             }
                         },
 
                          new TransactionType { 
                             Name = "FXResultPrincipal", 
                             TransactionRules = new List<TransactionRuleType> {
-                                new TransactionRuleType { PositionType = principalPosition, TransactionOperation = TransactionOperation.Add }
+                                new TransactionRuleType { PositionTypeName = principalPosition.Name, TransactionOperation = TransactionOperation.Add }
                             }
                         },
                         interestAccruedTransactionType,
@@ -137,7 +137,7 @@ namespace transactR.Tests
                          new TransactionType { 
                             Name = "InterestPayment", 
                             TransactionRules = new List<TransactionRuleType> {
-                                new TransactionRuleType { PositionType = interestAccruedPosition, TransactionOperation = TransactionOperation.Subtract }
+                                new TransactionRuleType { PositionTypeName = interestAccruedPosition.Name, TransactionOperation = TransactionOperation.Subtract }
                             }
                         },
 
@@ -175,36 +175,36 @@ namespace transactR.Tests
                     ScheduledTransactions = new List<ScheduledTransaction>() {
                          new ScheduledTransaction {
                              AmountExpression = "AdvanceAmount",
-                             DateType = startDate,
+                             DateTypeName = startDate.Name,
                              Timing = ScheduledTransactionTiming.StartOfDay,
-                             TransactionType = advanceTransactionType,
+                             TransactionTypeName = advanceTransactionType.Name,
                              Sequence =1
                         },
                         new ScheduledTransaction {
                              AmountExpression = "TransactRules.Calculations.AccrualCalculation.InterestAccrued(accrualOption: AccrualOption, principal: Principal, rate: InterestRate, valueDate:  TransactRules.Core.Utilities.SessionState.Current.ValueDate)",
-                             ScheduleType = accrualSchedule,
+                             ScheduleTypeName = accrualSchedule.Name,
                              Timing = ScheduledTransactionTiming.EndOfDay,
-                             TransactionType = interestAccruedTransactionType,
+                             TransactionTypeName = interestAccruedTransactionType.Name,
                              Sequence =1
                         },
                         new ScheduledTransaction {
                              AmountExpression = "InterestAccrued",
-                             ScheduleType = interestSchedule,
+                             ScheduleTypeName = interestSchedule.Name,
                              Timing = ScheduledTransactionTiming.EndOfDay,
-                             TransactionType = interestCapitalizedTransactionType,
+                             TransactionTypeName = interestCapitalizedTransactionType.Name,
                              Sequence =2
                         }
                     },
 
                     InstalmentTypes = new List<InstalmentType>() { 
                         new InstalmentType {
-                             InterestACapitalized = interestCapitalizedPosition,
-                             InterestAccrued = interestAccruedPosition,
+                             InterestCapitalizedPositionName = interestCapitalizedPosition.Name,
+                             InterestAccruedPositionName = interestAccruedPosition.Name,
                              Name ="Redemptions",
-                             PrincipalPositionType = principalPosition,
-                             ScheduleType = redemptionSchedule,
+                             PrincipalPositionTypeName = principalPosition.Name,
+                             ScheduleTypeName = redemptionSchedule.Name,
                              Timing = ScheduledTransactionTiming.StartOfDay,
-                             TransactionType = redemptionTransactionType
+                             TransactionTypeName = redemptionTransactionType.Name
                         }
                     }
                 };
@@ -232,29 +232,29 @@ namespace transactR.Tests
                         new TransactionType { 
                             Name = "Deposit", 
                             TransactionRules = new List<TransactionRuleType> {
-                                new TransactionRuleType { PositionType = currentPosition, TransactionOperation = TransactionOperation.Add }
+                                new TransactionRuleType { PositionTypeName = currentPosition.Name, TransactionOperation = TransactionOperation.Add }
                             }
                         },
 
                         new TransactionType { 
                             Name = "Withdrawal", 
                             TransactionRules =  new List<TransactionRuleType> {
-                                new TransactionRuleType { PositionType = currentPosition, TransactionOperation = TransactionOperation.Subtract }
+                                new TransactionRuleType { PositionTypeName = currentPosition.Name, TransactionOperation = TransactionOperation.Subtract }
                             }
                         },
 
                         new TransactionType { 
                             Name = "IntrerestAccrued", 
                             TransactionRules = new List<TransactionRuleType> {
-                                new TransactionRuleType { PositionType = interestAccruedPosition, TransactionOperation = TransactionOperation.Add }
+                                new TransactionRuleType { PositionTypeName = interestAccruedPosition.Name, TransactionOperation = TransactionOperation.Add }
                             }
                         },
 
                         new TransactionType { 
                             Name = "IntrerestCapitalized", 
                             TransactionRules = new List<TransactionRuleType> {
-                                new TransactionRuleType { PositionType = interestAccruedPosition, TransactionOperation = TransactionOperation.Subtract },
-                                new TransactionRuleType { PositionType = currentPosition, TransactionOperation = TransactionOperation.Add }
+                                new TransactionRuleType { PositionTypeName = interestAccruedPosition.Name, TransactionOperation = TransactionOperation.Subtract },
+                                new TransactionRuleType { PositionTypeName = currentPosition.Name, TransactionOperation = TransactionOperation.Add }
                             }
                         },
                     }
