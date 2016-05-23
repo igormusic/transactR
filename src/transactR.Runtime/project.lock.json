@@ -1889,6 +1889,19 @@
         "runtime": {
           "netcoreapp1.0/transactR.Config.dll": {}
         }
+      },
+      "transactR.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.0",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.0.0-rc2-3002702"
+        },
+        "compile": {
+          "netcoreapp1.0/transactR.Core.dll": {}
+        },
+        "runtime": {
+          "netcoreapp1.0/transactR.Core.dll": {}
+        }
       }
     }
   },
@@ -6389,12 +6402,18 @@
       "type": "project",
       "path": "../transactR.Config/project.json",
       "msbuildProject": "../transactR.Config/transactR.Config.xproj"
+    },
+    "transactR.Core/1.0.0": {
+      "type": "project",
+      "path": "../transactR.Core/project.json",
+      "msbuildProject": "../transactR.Core/transactR.Core.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
       "Microsoft.NETCore.App >= 1.0.0-rc2-3002702",
-      "transactR.Config >= 1.0.0-*"
+      "transactR.Config >= 1.0.0-*",
+      "transactR.Core >= 1.0.0-*"
     ],
     ".NETCoreApp,Version=v1.0": []
   },

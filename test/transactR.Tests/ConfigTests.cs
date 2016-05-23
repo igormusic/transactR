@@ -2,6 +2,8 @@
 using Xunit;
 using System;
 using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace transactR.Tests
 {
@@ -15,6 +17,11 @@ namespace transactR.Tests
             var json = JsonConvert.SerializeObject(config, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             Console.Error.Write(json);
+
+
+            var setProperty = typeof(DbContext).GetMethod("Set");
+
+           
         }
 
     }

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.ComponentModel.DataAnnotations;
 
 using TransactRules.Core.Entities;
-using TransactRules.Runtime;
 using TransactRules.Runtime.Values;
 using TransactRules.Runtime.Rates;
 using TransactRules.Runtime.Schedules;

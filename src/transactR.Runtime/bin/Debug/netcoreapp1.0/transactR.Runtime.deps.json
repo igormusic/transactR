@@ -9,7 +9,8 @@
       "transactR.Runtime/1.0.0": {
         "dependencies": {
           "Microsoft.NETCore.App": "1.0.0-rc2-3002702",
-          "transactR.Config": "1.0.0"
+          "transactR.Config": "1.0.0",
+          "transactR.Core": "1.0.0"
         },
         "runtime": {
           "transactR.Runtime.dll": {}
@@ -1327,6 +1328,14 @@
         "runtime": {
           "transactR.Config.dll": {}
         }
+      },
+      "transactR.Core/1.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.0.0-rc2-3002702"
+        },
+        "runtime": {
+          "transactR.Core.dll": {}
+        }
       }
     }
   },
@@ -1907,6 +1916,11 @@
       "sha512": "sha512-IxOLcwl5A0Lm1s2FIUh5klV+Fi0tUE/5OltvIkZdV7phcWVfgBlCRlgxweaXVrCTI+9TZ8TihVutVaA+PC95lg=="
     },
     "transactR.Config/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "transactR.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

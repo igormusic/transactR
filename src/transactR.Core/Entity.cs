@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TransactRules.Core.Entities
 {
-    public abstract class Entity
+    public abstract class Entity:IEntity
     {
         public Entity()
         {

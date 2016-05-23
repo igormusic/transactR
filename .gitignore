@@ -8,3 +8,7 @@
 /src/transactR.Config/obj/Debug/netcoreapp1.0
 /test/transactR.Tests/bin/Debug/netcoreapp1.0
 /test/transactR.Tests/obj/Debug/netcoreapp1.0
+/src/transactR.Core/bin/Debug/netcoreapp1.0
+/src/transactR.Core/obj/Debug/netcoreapp1.0
+/src/transactR.Core.EF/bin/Debug/netcoreapp1.0
+/src/transactR.Core.EF/obj/Debug/netcoreapp1.0
