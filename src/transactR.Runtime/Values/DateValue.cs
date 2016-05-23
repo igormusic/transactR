@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TransactRules.Core.Entities;
-using TransactRules.Runtime.Accounts;
-using TransactRules.Core.Utilities;
+using transactR.Core.Entities;
+using transactR.Runtime.Accounts;
+using transactR.Core.Utilities;
 
-namespace TransactRules.Runtime.Values
+namespace transactR.Runtime.Values
 {
     public class DateValue:Entity
     {

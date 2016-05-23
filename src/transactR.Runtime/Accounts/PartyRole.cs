@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TransactRules.Runtime.Accounts;
-using TransactRules.Runtime;
-using TransactRules.Runtime.Parties;
-using TransactRules.Core.Entities;
+using transactR.Runtime.Accounts;
+using transactR.Runtime;
+using transactR.Runtime.Parties;
+using transactR.Core.Entities;
 
-namespace TransactRules.Runtime.Accounts
+namespace transactR.Runtime.Accounts
 {
     public class PartyRole:Entity
     {

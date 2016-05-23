@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TransactRules.Core.Entities;
-using TransactRules.Runtime;
-using TransactRules.Runtime.Values;
-using TransactRules.Runtime.Rates;
+using transactR.Core.Entities;
+using transactR.Runtime;
+using transactR.Runtime.Values;
+using transactR.Runtime.Rates;
 
-namespace TransactRules.Runtime.Parties
+namespace transactR.Runtime.Parties
 {
     public class Party:Entity
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TransactRules.Configuration;
-using TransactRules.Core.Entities;
+using transactR.Configuration;
+using transactR.Core.Entities;
 
-namespace TransactRules.Runtime.Schedules
+namespace transactR.Runtime.Schedules
 {
     public class Calendar : Entity, IBusinessDayCalculator
     {

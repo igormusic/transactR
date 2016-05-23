@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TransactRules.Configuration
+namespace transactR.Configuration
 {
     public class OptionType
     {

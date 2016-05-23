@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TransactRules.Configuration
+namespace transactR.Configuration
 {
     public class TransactionType
     {

@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-using TransactRules.Core.Entities;
-using TransactRules.Runtime.Values;
-using TransactRules.Runtime.Rates;
-using TransactRules.Runtime.Schedules;
+using transactR.Core.Entities;
+using transactR.Runtime.Values;
+using transactR.Runtime.Rates;
+using transactR.Runtime.Schedules;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TransactRules.Runtime.Accounts
+namespace transactR.Runtime.Accounts
 {
     public class Account:Entity
     {

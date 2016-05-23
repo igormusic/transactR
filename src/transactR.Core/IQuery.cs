@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 
 
-namespace TransactRules.Core.Entities
+namespace transactR.Core.Entities
 {
     public interface IQuery
     {

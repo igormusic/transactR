@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
-using TransactRules.Core.Entities;
+using transactR.Core.Entities;
 
 namespace transactR.Core.EF
 {

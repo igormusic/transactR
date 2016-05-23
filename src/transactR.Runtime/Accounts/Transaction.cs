@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TransactRules.Core.Entities;
-using TransactRules.Core.Utilities;
+using transactR.Core.Entities;
+using transactR.Core.Utilities;
 
-namespace TransactRules.Runtime.Accounts
+namespace transactR.Runtime.Accounts
 {
     public class Transaction:Entity
     {

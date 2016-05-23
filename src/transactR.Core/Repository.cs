@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TransactRules.Core.Entities
+namespace transactR.Core.Entities
 {
     public class Repository<T> : IRepository<T> where T : IEntity
     {

@@ -1,4 +1,4 @@
-﻿namespace TransactRules.Configuration
+﻿namespace transactR.Configuration
 {
     public class RateType
     {

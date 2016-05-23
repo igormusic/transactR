@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TransactRules.Core.Entities;
+using transactR.Core.Entities;
 
-namespace TransactRules.Runtime.Accounts
+namespace transactR.Runtime.Accounts
 {
     public class Position:Entity
     {

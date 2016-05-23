@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TransactRules.Core.Entities;
+using transactR.Core.Entities;
 
-namespace TransactRules.Runtime.Rates
+namespace transactR.Runtime.Rates
 {
     public class RateValue:Entity
     {

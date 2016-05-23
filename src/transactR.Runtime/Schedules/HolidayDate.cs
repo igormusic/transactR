@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TransactRules.Core.Entities;
+using transactR.Core.Entities;
 
-namespace TransactRules.Runtime.Schedules
+namespace transactR.Runtime.Schedules
 {
     public class HolidayDate:Entity
     {

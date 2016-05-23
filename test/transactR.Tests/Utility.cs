@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using TransactRules.Configuration;
+using transactR.Configuration;
 
 namespace transactR.Tests
 {
@@ -169,7 +169,7 @@ namespace transactR.Tests
 
                     OptionTypes = new List<OptionType>() { 
                         new OptionType {Name = "AccrualOption",
-                                        OptionListExpression = "TransactRules.Calculations.AccrualCalculation.AccrualOptions()"}
+                                        OptionListExpression = "transactR.Calculations.AccrualCalculation.AccrualOptions()"}
                     }
                     ,
                     ScheduledTransactions = new List<ScheduledTransaction>() {
@@ -181,7 +181,7 @@ namespace transactR.Tests
                              Sequence =1
                         },
                         new ScheduledTransaction {
-                             AmountExpression = "TransactRules.Calculations.AccrualCalculation.InterestAccrued(accrualOption: AccrualOption, principal: Principal, rate: InterestRate, valueDate:  TransactRules.Core.Utilities.SessionState.Current.ValueDate)",
+                             AmountExpression = "transactR.Calculations.AccrualCalculation.InterestAccrued(accrualOption: AccrualOption, principal: Principal, rate: InterestRate, valueDate:  transactR.Core.Utilities.SessionState.Current.ValueDate)",
                              ScheduleTypeName = accrualSchedule.Name,
                              Timing = ScheduledTransactionTiming.EndOfDay,
                              TransactionTypeName = interestAccruedTransactionType.Name,

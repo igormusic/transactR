@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 
-namespace TransactRules.Configuration
+namespace transactR.Configuration
 {
     public enum ScheduledTransactionTiming { 
         StartOfDay,

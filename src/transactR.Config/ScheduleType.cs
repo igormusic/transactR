@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace TransactRules.Configuration
+namespace transactR.Configuration
 {
     public enum ScheduleFrequency
     { 

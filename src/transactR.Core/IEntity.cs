@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System;
 
-namespace TransactRules.Core.Entities
+namespace transactR.Core.Entities
 {
     public interface IEntity
     {

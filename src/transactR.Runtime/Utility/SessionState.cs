@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace TransactRules.Core.Utilities
+namespace transactR.Core.Utilities
 
 {
     public class SessionState

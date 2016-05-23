@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace TransactRules.Core.Entities
+namespace transactR.Core.Entities
 {
     public abstract class Entity:IEntity
     {

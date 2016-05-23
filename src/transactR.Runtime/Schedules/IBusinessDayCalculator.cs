@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TransactRules.Configuration;
+using transactR.Configuration;
 
-namespace TransactRules.Runtime.Schedules
+namespace transactR.Runtime.Schedules
 {
     public interface IBusinessDayCalculator
     {

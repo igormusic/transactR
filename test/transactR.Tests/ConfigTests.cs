@@ -17,10 +17,6 @@ namespace transactR.Tests
             var json = JsonConvert.SerializeObject(config, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             Console.Error.Write(json);
-
-
-            var setProperty = typeof(DbContext).GetMethod("Set");
-
            
         }
 

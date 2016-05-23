@@ -2585,6 +2585,34 @@
         "runtime": {
           "netcoreapp1.0/transactR.Config.dll": {}
         }
+      },
+      "transactR.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.0",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.0.0-rc2-3002702"
+        },
+        "compile": {
+          "netcoreapp1.0/transactR.Core.dll": {}
+        },
+        "runtime": {
+          "netcoreapp1.0/transactR.Core.dll": {}
+        }
+      },
+      "transactR.Runtime/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.0",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.0.0-rc2-3002702",
+          "transactR.Config": "1.0.0",
+          "transactR.Core": "1.0.0"
+        },
+        "compile": {
+          "netcoreapp1.0/transactR.Runtime.dll": {}
+        },
+        "runtime": {
+          "netcoreapp1.0/transactR.Runtime.dll": {}
+        }
       }
     }
   },
@@ -7604,6 +7632,16 @@
       "type": "project",
       "path": "../../src/transactR.Config/project.json",
       "msbuildProject": "../../src/transactR.Config/transactR.Config.xproj"
+    },
+    "transactR.Core/1.0.0": {
+      "type": "project",
+      "path": "../../src/transactR.Core/project.json",
+      "msbuildProject": "../../src/transactR.Core/transactR.Core.xproj"
+    },
+    "transactR.Runtime/1.0.0": {
+      "type": "project",
+      "path": "../../src/transactR.Runtime/project.json",
+      "msbuildProject": "../../src/transactR.Runtime/transactR.Runtime.xproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7611,6 +7649,7 @@
       "Microsoft.EntityFrameworkCore >= 1.0.0-rc2-final",
       "dotnet-test-xunit >= 1.0.0-rc2-build10015",
       "transactR.Config >= 1.0.0-*",
+      "transactR.Runtime >= 1.0.0-*",
       "xunit >= 2.1.0"
     ],
     ".NETCoreApp,Version=v1.0": [

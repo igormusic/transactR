@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
-using TransactRules.Core.Entities;
+using transactR.Core.Entities;
 
-using TransactRules.Runtime.Accounts;
+using transactR.Runtime.Accounts;
 
-namespace TransactRules.Runtime.Values
+namespace transactR.Runtime.Values
 {
     public class AmountValue:Entity, ITemporalPropertyValue<decimal>
     {

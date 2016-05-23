@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TransactRules.Core.Entities;
+using transactR.Core.Entities;
 
-namespace TransactRules.Runtime.Accounts
+namespace transactR.Runtime.Accounts
 {
     public class AccountGroup:Entity
     {

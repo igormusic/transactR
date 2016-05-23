@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
-using TransactRules.Core.Entities;
-using TransactRules.Configuration;
-using TransactRules.Runtime.Accounts;
+using transactR.Core.Entities;
+using transactR.Configuration;
+using transactR.Runtime.Accounts;
 
-using TransactRules.Core.Utilities;
+using transactR.Core.Utilities;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TransactRules.Runtime.Schedules
+namespace transactR.Runtime.Schedules
 {
     public class Schedule:Entity
     {

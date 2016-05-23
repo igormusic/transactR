@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TransactRules.Core.Entities;
-using TransactRules.Runtime.Parties;
+using transactR.Core.Entities;
+using transactR.Runtime.Parties;
 
-namespace TransactRules.Runtime.Data
+namespace transactR.Runtime.Data
 {
     public interface IPartyRepository : IRepository<Party>
     {

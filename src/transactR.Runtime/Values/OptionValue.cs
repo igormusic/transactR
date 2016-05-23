@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using TransactRules.Core.Entities;
+using transactR.Core.Entities;
 
 
-namespace TransactRules.Runtime.Values
+namespace transactR.Runtime.Values
 {
     public class OptionValue:Entity
     {
